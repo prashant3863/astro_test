@@ -1,18 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Picture } from '@astrojs/image/components';
+import appImg from '/public/rolodex_contact.png';
 ---
 
 <Layout title="Rolodex Landing Page">
   <main class="mx-auto h-screen w-2/3 antialiased flex justify-center items-center text-center">
-    <div>
+    <div class="space-y-4">
       <p class="text-3xl font-bold">Rolo/dex</p>
       <p class="text-xl">Build better relationships by bringing social back to our networks</p>
-      <div class="grid grid-cols-2 my-8">
-        <p>Designed for thoughtful relationship building: Rolo/dex beautifully visualises your network and surfaces organic actions with your connections.
-          Rolo/dex is local-first and user owned - a secure and private way to nurture your relationships</p>
-        <p>pic</p>
+      <p>Designed for thoughtful relationship building: Rolo/dex beautifully visualises your network and surfaces organic actions with your connections.
+      </br>Rolo/dex is local-first and user owned - a secure and private way to nurture your relationships</p>
+      <div class="flex justify-center">
+        <Picture
+          src={appImg}
+          widths={[50, 100, 200]}
+          sizes="(max-width: 200px) 100vw, 200px"
+          alt="descriptive text"
+        />
       </div>
-      <a href="https://shovelco.notion.site/Decentralised-Contact-Network-Summary-v0-2-58cbcf348c8e44d89dfef40b740d61a9?pvs=4" target="_blank" class="mt-8 px-5 py-2.5 bg-black text-white rounded-lg">Join the waitlist here.</a>
+      <button href="https://shovelco.notion.site/Decentralised-Contact-Network-Summary-v0-2-58cbcf348c8e44d89dfef40b740d61a9?pvs=4" target="_blank" class="mt-8 px-5 py-2.5 bg-black text-white rounded-lg">Join the waitlist here.</button>
+      <div class="text-xs font-light mt-8">
+        Powered by &#128640;</br><a href="https://astro.shovel.company/landing" class="underline">Decentralised Connections Protocol</a>
+      </div>
+      <div class="text-xs font-light mt-8">
+        Made with &#10084; by <a href="https://shovel.company/#team" class="underline">Shovel.Company</a>
+      </div>
     </div>
   </main>
 </Layout>
